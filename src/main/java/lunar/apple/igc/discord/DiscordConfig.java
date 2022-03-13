@@ -8,9 +8,10 @@ import java.io.File;
 public class DiscordConfig {
     private static DiscordConfig instance;
     public String discordToken = "discordToken";
+    public Long mainGuildId = null;
 
     public static void load() {
-        File file = PluginDiscord.get().getFile("discordConfig.json");
+        File file = PluginIgc.get().getFile("discordConfig.json");
         AppleAJDInstImpl<DiscordConfig> manager = new AppleAJDInstImpl<>(file, DiscordConfig.class, FileIOServiceNow.get());
         instance = manager.loadNowOrMake();
     }

@@ -1,6 +1,6 @@
 package lunar.apple.igc;
 
-import lunar.apple.igc.discord.PluginDiscord;
+import lunar.apple.igc.discord.PluginIgc;
 import plugin.util.plugin.plugin.util.plugin.PluginManaged;
 import plugin.util.plugin.plugin.util.plugin.PluginManagedModule;
 import voltskiya.apple.configs.plugin.manage.PluginManagedConfigRegister;
@@ -27,7 +27,7 @@ public class LunarPlugin extends PluginManaged implements PluginManagedConfigReg
     @Override
     public Collection<PluginManagedModule> getModules() {
         return List.of(
-                new PluginDiscord()
+                new PluginIgc()
         );
     }
 }
