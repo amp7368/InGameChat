@@ -1,0 +1,47 @@
+plugins {
+    id 'java'
+    id 'base'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+    flatDir {
+        dirs 'C:\\Users\\Aaron\\Desktop\\builds\\Idea\\Discord'
+        dirs 'C:\\Users\\Aaron\\Desktop\\builds\\Idea\\Lib'
+        dirs 'C:\\Users\\Aaron\\Desktop\\builds\\Idea\\Minecraft'
+    }
+    maven {
+        url 'https://papermc.io/repo/repository/maven-public/'
+    }
+    maven {
+        url 'https://repo.aikar.co/content/groups/aikar/'
+    }
+    maven {
+        url 'https://jitpack.io'
+    }
+}
+configurations.all {
+    resolutionStrategy.cacheDynamicVersionsFor 1, 'seconds'
+    resolutionStrategy.cacheChangingModulesFor 1, 'seconds'
+}
+java {
+    toolchain.languageVersion.set(JavaLanguageVersion.of(17))
+}
+dependencies {
+    compileOnly 'apple.libraries:AppleUtilityLibraries:v1.1'
+    compileOnly 'apple.configs:AppleConfigs:v1.1'
+
+
+    compileOnly 'io.papermc.paper:paper-api:1.18.1-R0.1-SNAPSHOT'
+    compileOnly 'org.spigotmc:spigot:1.18.1-R0.1-SNAPSHOT'
+
+
+    compileOnly 'co.aikar:acf-paper:0.5.1-SNAPSHOT'
+}
+jar {
+    destinationDirectory = new File('C:\\Users\\Aaron\\Desktop\\server\\plugins\\')
+}
