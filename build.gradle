@@ -34,12 +34,15 @@ java {
 dependencies {
     compileOnly 'apple.libraries:AppleUtilityLibraries:v1.1'
     compileOnly 'apple.configs:AppleConfigs:v1.1'
+    compileOnly 'apple.acd:DiscordACD:2.4'
 
 
     compileOnly 'io.papermc.paper:paper-api:1.18.1-R0.1-SNAPSHOT'
     compileOnly 'org.spigotmc:spigot:1.18.1-R0.1-SNAPSHOT'
 
-
+    compileOnly('net.dv8tion:JDA:5.0.0-alpha.3') {
+        exclude module: 'opus-java'
+    }
     compileOnly 'co.aikar:acf-paper:0.5.1-SNAPSHOT'
 }
 jar {

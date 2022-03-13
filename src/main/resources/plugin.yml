@@ -3,5 +3,5 @@ version: 1.0
 main: lunar.apple.igc.LunarPlugin
 api-version: 1.18
 authors: [ appleptr16 ]
-depend: [ LoadDependencies, VoltskiyaUtilities, DecodingNms ]
-softdepend: [ LoadDependencies, DecodingNms, VoltskiyaUtilities , AppleConfigs, VoltskiyaMobManager ]
+depend: [ LoadDependencies ]
+softdepend: [ LoadDependencies ]
