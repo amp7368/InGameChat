@@ -1,6 +1,7 @@
 package lunar.apple.igc;
 
 import lunar.apple.igc.discord.PluginIgc;
+import org.slf4j.Logger;
 import plugin.util.plugin.plugin.util.plugin.PluginManaged;
 import plugin.util.plugin.plugin.util.plugin.PluginManagedModule;
 import voltskiya.apple.configs.plugin.manage.PluginManagedConfigRegister;
@@ -17,6 +18,10 @@ public class LunarPlugin extends PluginManaged implements PluginManagedConfigReg
 
     public static LunarPlugin get() {
         return instance;
+    }
+
+    public static Logger logger() {
+        return get().getSLF4JLogger();
     }
 
     @Override

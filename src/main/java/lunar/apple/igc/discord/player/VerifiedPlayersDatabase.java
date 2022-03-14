@@ -43,9 +43,9 @@ public class VerifiedPlayersDatabase {
         return id;
     }
 
-    public boolean confirm(UUID requestId) {
+    public boolean confirm(UUID playerUUID, UUID requestId) {
         VerifiedPlayer processing = processingUsernames.remove(requestId);
-        if (processing == null) return false;
+        if (processing == null || !processing.getMinecraftId().equals(playerUUID)) return false;
         add(processing);
         processing.verifyName();
         return true;

@@ -41,8 +41,9 @@ dependencies {
     compileOnly 'org.spigotmc:spigot:1.18.1-R0.1-SNAPSHOT'
 
     compileOnly('net.dv8tion:JDA:5.0.0-alpha.9') {
-        exclude module: 'opus-java'
+       exclude module: 'opus-java'
     }
+    compileOnly "club.minnced:discord-webhooks:0.8.0"
     compileOnly 'co.aikar:acf-paper:0.5.1-SNAPSHOT'
 }
 jar {

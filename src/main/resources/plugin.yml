@@ -3,5 +3,5 @@ version: 1.0
 main: lunar.apple.igc.LunarPlugin
 api-version: 1.18
 authors: [ appleptr16 ]
-depend: [ LoadDependencies ]
-softdepend: [ LoadDependencies ]
+depend: [ LoadDependencies, AppleConfigs ]
+softdepend: [ ]

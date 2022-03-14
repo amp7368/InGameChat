@@ -8,6 +8,7 @@ import lunar.apple.igc.LunarPlugin;
 import lunar.apple.igc.discord.player.VerifiedPlayersDatabase;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.UUID;
@@ -19,10 +20,10 @@ public class CommandMCConfirm extends BaseCommand {
     }
 
     @Subcommand("confirm")
-    public void confirm(CommandSender sender, @Name("id") String id) {
+    public void confirm(Player sender, @Name("id") String id) {
         UUID requestId = getUUID(sender, id);
         if (requestId == null) return;
-        if (VerifiedPlayersDatabase.get().confirm(requestId)) {
+        if (VerifiedPlayersDatabase.get().confirm(sender.getUniqueId(), requestId)) {
             sender.sendMessage(ChatColor.GREEN + "Thank you for confirming your discord!");
         } else {
             fail(sender);
@@ -38,7 +39,7 @@ public class CommandMCConfirm extends BaseCommand {
         UUID requestId = getUUID(sender, id);
         if (requestId == null) return;
         if (VerifiedPlayersDatabase.get().deny(requestId)) {
-            sender.sendMessage("You denied that request.");
+            sender.sendMessage(ChatColor.RED + "You denied that request.");
         } else {
             fail(sender);
         }

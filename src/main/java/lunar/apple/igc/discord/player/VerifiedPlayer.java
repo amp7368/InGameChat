@@ -1,7 +1,7 @@
 package lunar.apple.igc.discord.player;
 
 import lunar.apple.igc.LunarPlugin;
-import lunar.apple.igc.discord.DiscordBot;
+import lunar.apple.igc.discord.SendDiscord;
 import net.dv8tion.jda.api.entities.User;
 import org.bukkit.entity.Player;
 
@@ -45,12 +45,12 @@ public class VerifiedPlayer {
     }
 
     public void verifyName() {
-        DiscordBot.mainGuild.retrieveMemberById(discordId).queue(
+        SendDiscord.mainGuild.retrieveMemberById(discordId).queue(
                 member -> {
                     if (member == null) {
                         this.memberFound = false;
                     } else {
-                        DiscordBot.mainGuild.modifyNickname(member, lastKnownUsername).queue();
+                        SendDiscord.mainGuild.modifyNickname(member, lastKnownUsername).queue();
                         this.memberFound = true;
                     }
                 },
